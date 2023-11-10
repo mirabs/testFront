@@ -1,7 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const url = "http://localhost:3000";
+  const [data, setData] = useState("");
+
+  const fetchInfo = () => {
+    return fetch(url)
+      .then((res) => res.text())
+      .then((d) => setData(d))
+  }
+
+  useEffect(() => {
+    fetchInfo();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +29,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {data}
         </a>
       </header>
     </div>
