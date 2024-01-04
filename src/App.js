@@ -3,18 +3,19 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const url = "http://localhost:3000";
+  useEffect(() => {
+   fetchInfo();
+  }, []);
+  const url = process.env.REACT_APP_BACK_APP_URL + "/users";
   const [data, setData] = useState("");
+
+
 
   const fetchInfo = () => {
     return fetch(url)
       .then((res) => res.text())
       .then((d) => setData(d))
   }
-
-  useEffect(() => {
-    fetchInfo();
-  }, []);
 
   return (
     <div className="App">
