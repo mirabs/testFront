@@ -4,18 +4,16 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   useEffect(() => {
-   fetchInfo();
+    const url = process.env.REACT_APP_BACK_APP_URL + "/users";
+    const fetchInfo = () => {
+      return fetch(url)
+          .then((res) => res.text())
+          .then((d) => setData(d))
+    }
+    fetchInfo()
   }, []);
-  const url = process.env.REACT_APP_BACK_APP_URL + "/users";
+
   const [data, setData] = useState("");
-
-
-
-  const fetchInfo = () => {
-    return fetch(url)
-      .then((res) => res.text())
-      .then((d) => setData(d))
-  }
 
   return (
     <div className="App">
