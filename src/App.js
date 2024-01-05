@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    //const url = process.env.REACT_APP_BACK_APP_URL + "/users";
-    const url = "https://webapp-test-react.azurewebsites.net/users";
+    const url1 = process.env.REACT_APP_BACK_APP_URL + "/users";
+    console.log(url1);
+    const url = "https://webapp-test-node.azurewebsites.net/users";
     console.log(url);
     const fetchInfo = () => {
       return fetch(url)
