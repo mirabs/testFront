@@ -4,10 +4,15 @@ import React, { useState, useEffect } from "react";
 
 function App() {
   useEffect(() => {
+
+
     const url1 = process.env.REACT_APP_BACK_APP_URL + "/users";
-    console.log(url1);
+    console.log("ENV:" + url1);
+    const url2 = process.env.REACT_APP_AZURE_APP_BACK_APP_URL + "/users";
+    console.log("Azure:" + url2);
+
     const url = "https://webapp-test-node.azurewebsites.net/users";
-    console.log(url);
+    console.log("Const:" + url);
     const fetchInfo = () => {
       return fetch(url)
           .then((res) => res.text())
