@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 
 function App() {
-  /**useEffect(() => {
+  useEffect(() => {
     const url = process.env.REACT_APP_BACK_APP_URL + "/users";
     const fetchInfo = () => {
       return fetch(url)
@@ -14,7 +14,7 @@ function App() {
   }, []);
 
   const [data, setData] = useState("");
-**/
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,6 +29,7 @@ function App() {
           rel="noopener noreferrer"
         >
          HELLO
+            {data}
         </a>
       </header>
     </div>
