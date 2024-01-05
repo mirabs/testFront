@@ -5,7 +5,8 @@ import React, { useState, useEffect } from "react";
 function App() {
   useEffect(() => {
 
-
+    console.log(process.env);
+    
     const url1 = process.env.REACT_APP_BACK_APP_URL + "/users";
     console.log("ENV:" + url1);
     const url2 = process.env.REACT_APP_AZURE_APP_BACK_APP_URL + "/users";
