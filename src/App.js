@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 function App() {
   useEffect(() => {
     const url = process.env.REACT_APP_BACK_APP_URL + "/users";
+    console.log(url);
     const fetchInfo = () => {
       return fetch(url)
           .then((res) => res.text())
